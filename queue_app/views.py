@@ -38,9 +38,11 @@ def add_task():
 
 @app.route("/results/<job_key>", methods=['GET'])
 def get_results(job_key):
+    q_len = len(q.jobs) + 1
+    
     job = Job.fetch(job_key, connection=r)
 
     if job.is_finished:
         return render_template("final.html", paragraphs=job.result[0], title = job.result[1]), 200
     else:
-        return render_template("final.html", paragraphs=False), 202
+        return render_template("final.html", paragraphs=False, q_len=q_len), 202

@@ -21,6 +21,7 @@
         <div class="jumbotron jumbotron-fluid" id="load-page">
             <script>setTimeout(() => {location.reload(true)}, 5000)</script>
             <h1>Your request is in the queue.</h1>
+            <p>Current number of jobs in the queue: {{ q_len }}</p>
             <p>This page will refresh every 5 seconds until your job has been completed.</p>
             <div class="loader"></div>
         </div>

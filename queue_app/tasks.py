@@ -17,7 +17,7 @@ def count_words(url):
             tag_text = "div"
             class_text = "zn-body__paragraph"
         else:
-            tag_text="div"
+            tag_text="p"
             class_text = None
 
         soup = BeautifulSoup(r.read().decode(), "lxml")

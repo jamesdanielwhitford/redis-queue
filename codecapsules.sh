@@ -1,2 +1,3 @@
-gunicorn queue_app:app --daemon
-python worker.py
+# gunicorn queue_app:app 
+# --daemon
+# python worker.py

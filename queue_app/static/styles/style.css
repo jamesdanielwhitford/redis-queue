@@ -23,9 +23,11 @@
     text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
+@media only screen and (max-width: 600px) {
   h1 {
-    font-size: 2em;
+    font-size: 25px;
+  }
+  .jumbotron{
+    margin: 0;
   }
 }

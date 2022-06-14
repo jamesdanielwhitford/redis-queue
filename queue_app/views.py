@@ -44,8 +44,11 @@ def get_results(job_key):
     job = Job.fetch(job_key, connection=r)
 
     # Print errors to console
-    if job.result[2]:
-        print(job.result[2])
+    try:
+        if job.result[2]:
+            print(job.result[2])
+    except:
+        pass
 
     if job.is_finished:
         return render_template("final.html", paragraphs=job.result[0], title = job.result[1]), 200

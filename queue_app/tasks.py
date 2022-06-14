@@ -5,7 +5,6 @@ import time
 import redis 
 
 def count_words(url):
-    time.sleep(1)
 
     try:
         r = request.urlopen(url)

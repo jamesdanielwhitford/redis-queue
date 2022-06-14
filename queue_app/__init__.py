@@ -5,7 +5,6 @@ from rq import Queue
 
 app = Flask(__name__)
 
-# r = redis.Redis()
 redis_url = os.getenv('REDIS_URL')
 
 r = redis.from_url(redis_url)

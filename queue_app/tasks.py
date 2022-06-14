@@ -4,7 +4,7 @@ import lxml
 import time
 import redis 
 
-def count_words(url):
+def scrape_url(url):
 
     try:
         r = request.urlopen(url)
@@ -27,8 +27,8 @@ def count_words(url):
 
         return paragraphs, title
     
-    except:
-        paragraphs = ["The url you submitted is invalid or cannot be scraped."]
-        title = "Failed to access url"
-        return paragraphs, title
+    except Exception as e:
+        paragraphs = ["The url you submitted is invalid or cannot be scraped.", f"The url returned this failure: \n\n{e}"]
+        title = "Failed to access the url"
+        return paragraphs, title, e
 

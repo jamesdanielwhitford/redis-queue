@@ -18,11 +18,6 @@ def index():
 @app.route("/add_task", methods=["GET", "POST"])
 def add_task():
 
-    jobs = q.jobs
-
-
-    message = None
-
     if request.args:
         url = request.args.get("url")
 
@@ -34,7 +29,7 @@ def add_task():
 
 
 
-    return render_template("add_task.html", message=message, jobs=jobs)
+    return render_template("add_task.html")
 
 @app.route("/results/<job_key>", methods=['GET'])
 def get_results(job_key):
@@ -45,7 +40,9 @@ def get_results(job_key):
 
     # Print errors to console
     try:
-        if job.result[2]:
+        if type(job.result) != "list":
+            print(job.result)
+        elif job.result[2]:
             print(job.result[2])
     except:
         pass

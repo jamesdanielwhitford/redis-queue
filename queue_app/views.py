@@ -21,7 +21,7 @@ def add_task():
 
         return redirect(url_for(f"get_results", job_key=job_id))
 
-    return render_template("index.html")
+    return render_template("templates/index.html")
 
 @app.route("/results/<job_key>", methods=['GET'])
 def get_results(job_key):

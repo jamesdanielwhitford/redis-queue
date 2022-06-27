@@ -1,7 +1,7 @@
 from urllib import request
 from bs4 import BeautifulSoup
 
-def count_words(url):
+def scrape_url(url):
 
     try:
 
